@@ -1,15 +1,18 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <div id="app">
+    <ContadorDefault :valorInicial="10" /> <!-- ':' passa o valor como number -->
+    <ContadorClasse :valorInicial="100" />
+  </div>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
-import HelloWorld from './components/HelloWorld.vue';
+import ContadorDefault from '@/components/ContadorDefault.vue';
+import ContadorClasse from '@/components/ContadorClasse.vue';
 
 @Options({
   components: {
-    HelloWorld,
+    ContadorDefault, ContadorClasse
   },
 })
 export default class App extends Vue {}
